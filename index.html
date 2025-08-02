@@ -3,59 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StyleHub - Online Clothing Store</title>
+    <title>StyleHub - Fashion Store | Men's & Women's Clothing</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="container">
+            <p><i class="fas fa-truck"></i> Free shipping on orders over $50 | <i class="fas fa-undo"></i> 30-day returns</p>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <h2>StyleHub</h2>
+                    <h2><i class="fas fa-shopping-bag"></i> StyleHub</h2>
                 </div>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">Men <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="#men-shirts">Shirts</a>
-                            <a href="#men-pants">Pants</a>
-                            <a href="#men-jackets">Jackets</a>
-                            <a href="#men-accessories">Accessories</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">Women <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="#women-dresses">Dresses</a>
-                            <a href="#women-tops">Tops</a>
-                            <a href="#women-bottoms">Bottoms</a>
-                            <a href="#women-accessories">Accessories</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#sale" class="nav-link">Sale</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-                <div class="nav-icons">
+                
+                <!-- Search Bar -->
+                <div class="search-section">
                     <div class="search-container">
-                        <input type="text" id="search-input" placeholder="Search products...">
-                        <i class="fas fa-search search-icon"></i>
+                        <select class="search-category">
+                            <option value="all">All</option>
+                            <option value="men">Men</option>
+                            <option value="women">Women</option>
+                        </select>
+                        <input type="text" id="search-input" placeholder="Search for clothing, brands, styles...">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
                     </div>
-                    <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
-                    <a href="#" class="nav-icon" id="cart-icon">
+                </div>
+
+                <!-- Right Nav -->
+                <div class="nav-right">
+                    <div class="nav-item">
+                        <i class="fas fa-user"></i>
+                        <div class="nav-text">
+                            <small>Hello, Sign in</small>
+                            <strong>Account</strong>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <i class="fas fa-heart"></i>
+                        <div class="nav-text">
+                            <small>Returns</small>
+                            <strong>& Orders</strong>
+                        </div>
+                    </div>
+                    <div class="nav-item cart-nav" id="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count">0</span>
-                    </a>
+                        <div class="nav-text">
+                            <small>Cart</small>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -63,119 +69,205 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Secondary Navigation -->
+        <div class="secondary-nav">
+            <div class="container">
+                <ul class="nav-categories">
+                    <li><a href="#all" data-filter="all" class="filter-link active">All Departments</a></li>
+                    <li><a href="#men" data-filter="men" class="filter-link">Men's Fashion</a></li>
+                    <li><a href="#women" data-filter="women" class="filter-link">Women's Fashion</a></li>
+                    <li><a href="#sale" data-filter="sale" class="filter-link">Today's Deals</a></li>
+                    <li><a href="#new" data-filter="new" class="filter-link">New Arrivals</a></li>
+                    <li><a href="#" class="filter-link">Best Sellers</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Discover Your Style</h1>
-            <p>Premium clothing for men and women. Express yourself with our curated collection.</p>
-            <div class="hero-buttons">
-                <a href="#men" class="btn btn-primary">Shop Men</a>
-                <a href="#women" class="btn btn-secondary">Shop Women</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fashion Store">
-        </div>
-    </section>
-
-    <!-- Category Section -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="section-title">Shop By Category</h2>
-            <div class="category-grid">
-                <div class="category-card" data-category="men">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Men's Fashion">
-                    <div class="category-overlay">
-                        <h3>Men's Collection</h3>
-                        <p>Stylish & Comfortable</p>
-                        <a href="#men" class="btn btn-white">Shop Now</a>
-                    </div>
-                </div>
-                <div class="category-card" data-category="women">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616c27d90b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Women's Fashion">
-                    <div class="category-overlay">
-                        <h3>Women's Collection</h3>
-                        <p>Elegant & Trendy</p>
-                        <a href="#women" class="btn btn-white">Shop Now</a>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="banner-slider">
+                <div class="banner-slide active">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Fashion Sale">
+                    <div class="banner-content">
+                        <h1>Summer Fashion Sale</h1>
+                        <p>Up to 70% off on selected items</p>
+                        <button class="btn btn-primary">Shop Now</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products">
-        <div class="container">
-            <h2 class="section-title">Featured Products</h2>
-            <div class="product-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="men">Men</button>
-                <button class="filter-btn" data-filter="women">Women</button>
-                <button class="filter-btn" data-filter="sale">Sale</button>
-            </div>
-            <div class="products-grid" id="products-grid">
-                <!-- Products will be dynamically inserted here -->
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <nav>
+                    <span><i class="fas fa-home"></i> Home</span>
+                    <span class="separator">></span>
+                    <span id="breadcrumb-category">All Products</span>
+                </nav>
             </div>
         </div>
-    </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Stay Updated</h2>
-                <p>Subscribe to our newsletter and get 20% off your first order!</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+        <!-- Product Section -->
+        <section class="product-section">
+            <div class="container">
+                <div class="content-wrapper">
+                    <!-- Sidebar Filters -->
+                    <aside class="filters-sidebar">
+                        <div class="filter-group">
+                            <h3>Department</h3>
+                            <div class="filter-options">
+                                <label><input type="checkbox" value="men" class="category-filter"> Men's Clothing</label>
+                                <label><input type="checkbox" value="women" class="category-filter"> Women's Clothing</label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3>Price Range</h3>
+                            <div class="filter-options">
+                                <label><input type="checkbox" value="0-50" class="price-filter"> Under $50</label>
+                                <label><input type="checkbox" value="50-100" class="price-filter"> $50 - $100</label>
+                                <label><input type="checkbox" value="100-200" class="price-filter"> $100 - $200</label>
+                                <label><input type="checkbox" value="200+" class="price-filter"> Over $200</label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3>Customer Rating</h3>
+                            <div class="filter-options">
+                                <label><input type="checkbox" value="4" class="rating-filter">
+                                    <span class="stars">★★★★☆</span> & Up</label>
+                                <label><input type="checkbox" value="3" class="rating-filter">
+                                    <span class="stars">★★★☆☆</span> & Up</label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3>Brand</h3>
+                            <div class="filter-options">
+                                <label><input type="checkbox" value="premium" class="brand-filter"> Premium Collection</label>
+                                <label><input type="checkbox" value="essential" class="brand-filter"> Essential Basics</label>
+                                <label><input type="checkbox" value="designer" class="brand-filter"> Designer</label>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Main Product Area -->
+                    <div class="product-main">
+                        <!-- Results Header -->
+                        <div class="results-header">
+                            <div class="results-info">
+                                <span id="results-count">Showing 1-12 of 12 results</span>
+                            </div>
+                            <div class="sort-options">
+                                <label>Sort by:</label>
+                                <select id="sort-select">
+                                    <option value="featured">Featured</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Customer Rating</option>
+                                    <option value="newest">Newest Arrivals</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Products Grid -->
+                        <div class="products-grid" id="products-grid">
+                            <!-- Products will be dynamically inserted here -->
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="page-btn">‹ Previous</button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">Next ›</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Recently Viewed -->
+        <section class="recently-viewed">
+            <div class="container">
+                <h2>Recently Viewed Items</h2>
+                <div class="recent-products" id="recent-products">
+                    <!-- Recently viewed products -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="recommendations">
+            <div class="container">
+                <h2>Customers Who Bought This Item Also Bought</h2>
+                <div class="recommendation-grid" id="recommendation-grid">
+                    <!-- Recommended products -->
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>StyleHub</h3>
-                    <p>Your premium destination for fashion-forward clothing. Quality meets style in every piece.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Get to Know Us</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#men">Men's Collection</a></li>
-                        <li><a href="#women">Women's Collection</a></li>
-                        <li><a href="#sale">Sale</a></li>
+                        <li><a href="#">About StyleHub</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Releases</a></li>
+                        <li><a href="#">StyleHub Cares</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Customer Service</h4>
+                    <h4>Make Money with Us</h4>
                     <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Sell on StyleHub</a></li>
+                        <li><a href="#">Become an Affiliate</a></li>
+                        <li><a href="#">Advertise Your Products</a></li>
+                        <li><a href="#">Host a StyleHub Hub</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@stylehub.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Style City</p>
+                    <h4>Payment Products</h4>
+                    <ul>
+                        <li><a href="#">StyleHub Business Card</a></li>
+                        <li><a href="#">Shop with Points</a></li>
+                        <li><a href="#">Reload Your Balance</a></li>
+                        <li><a href="#">StyleHub Currency Converter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Let Us Help You</h4>
+                    <ul>
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Your Orders</a></li>
+                        <li><a href="#">Returns & Replacements</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 StyleHub. All rights reserved.</p>
+                <div class="footer-logo">
+                    <h3><i class="fas fa-shopping-bag"></i> StyleHub</h3>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Conditions of Use</a>
+                    <a href="#">Privacy Notice</a>
+                    <a href="#">Interest-Based Ads</a>
+                </div>
+                <div class="footer-copy">
+                    <p>&copy; 2024 StyleHub Fashion Store. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -183,22 +275,39 @@
     <!-- Shopping Cart Sidebar -->
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
-            <h3>Shopping Cart</h3>
+            <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
             <button class="close-cart" id="close-cart">&times;</button>
         </div>
         <div class="cart-items" id="cart-items">
             <!-- Cart items will be dynamically added here -->
         </div>
         <div class="cart-footer">
-            <div class="cart-total">
-                <strong>Total: $<span id="cart-total">0.00</span></strong>
+            <div class="cart-subtotal">
+                <div class="subtotal-line">
+                    <span>Subtotal (<span id="cart-item-count">0</span> items):</span>
+                    <strong>$<span id="cart-total">0.00</span></strong>
+                </div>
             </div>
-            <button class="btn btn-primary checkout-btn">Checkout</button>
+            <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+            <div class="cart-benefits">
+                <p><i class="fas fa-shield-alt"></i> Secure checkout</p>
+                <p><i class="fas fa-truck"></i> Free shipping on $50+</p>
+            </div>
         </div>
     </div>
 
     <!-- Cart Overlay -->
     <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quick-view-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modal-body">
+                <!-- Quick view content -->
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
